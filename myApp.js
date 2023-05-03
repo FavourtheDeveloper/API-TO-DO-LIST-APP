@@ -2,6 +2,9 @@ const inputText = document.getElementById("input");
 const list = document.getElementById("list");
 
 function addList() {
+   if (confirm("Are you sure you wanna get the Data from the JSON API???")){
+
+  
         var http = new XMLHttpRequest();
         http.onreadystatechange = function() {
             if(this.readyState === 4) {
@@ -18,7 +21,7 @@ function addList() {
         newList.style.color = "red";
         
     })
-    
+
     newList.addEventListener('dblclick', function() {
         list.removeChild(newList);
     })
@@ -30,7 +33,7 @@ function addList() {
         http.open('GET', 'https://jsonplaceholder.typicode.com/todos', true);
         http.send();
    
-
+    }
 
 }
      
